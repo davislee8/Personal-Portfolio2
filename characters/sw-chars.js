@@ -10,7 +10,7 @@ allCharsButton.addEventListener('click', function () {
   populateDOM(people)
 })
 
-const maleCharacters = people.filter(person => person.gender === 'male')  // elegant filter!
+const maleCharacters = people.filter((person) => person.gender === 'male') // elegant filter!
 
 /* const maleCharacters = people.filter((person) => {
   console.log(person)
@@ -23,7 +23,7 @@ const maleCharacters = people.filter(person => person.gender === 'male')  // ele
 const otherCharacters = people.filter((person) => {
   if (
     person.gender !== 'male' && person.gender !== 'female'
-    // person.gender === 'hermaphrodite' ||
+    // person.gender === 'hermaphrodite'  ||
     // person.gender === 'none' ||
     // person.gender === 'n/a'
   ) {
