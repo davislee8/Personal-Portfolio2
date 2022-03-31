@@ -134,3 +134,4 @@ const pilotNames = pilots.map(pilot => pilot.name) // new array just contains pi
 
 
 // Ternary operator syntax: condition ? exprIfTrue : exprIfFalse
+
