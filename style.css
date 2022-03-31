@@ -1,0 +1,156 @@
+:root {
+    --main-green: #3ba776;
+    --main-white: #fff;
+    --light-green: #29D987;
+    --blue: #5bb8ae;
+    --orange: #ffa856;
+    --brown: #8b766f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: underline;
+    color: #1e774d;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--brown);
+    position: fixed;
+    width: 100%;
+}
+
+.navList a:hover {
+    background-color: #999999;
+}
+
+.navList a {
+    display: block;
+    padding: 1.5rem;
+    color: var(--main-white);
+    font-size: xx-large;
+}
+
+#welcome-section {
+    background-color: var(--main-green);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: 4rem;
+    text-decoration: underline;
+}
+
+h2 {
+    padding: 4rem;
+    font-size: 3rem;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue);
+}
+
+.project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--brown);
+}
+
+.contact-links {
+    display: flex;
+}
+
+.contact-links a {
+    display: block;
+    padding: 2rem 3rem;
+    font-size: xx-large;
+}
+
+footer {
+    padding: 3rem;
+    text-align: center;
+    background-color: var(--brown);
+    color: var(--orange);
+}
+
+figure {
+    margin: 2rem;
+}
+
+figure img {
+    width: 30rem;
+    border-radius: 2rem;
+}
+
+/* a:hover {
+    background-color: rgb(39, 82, 139);
+    border-radius: 2rem;
+    margin: 3rem;
+} */
+
+figcaption {
+    background-color: #999999;
+    text-align: center;
+    font-size: x-large;
+    border-radius: 2px 2px 6px 6px;
+    padding: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contact-details {
+    transition: transform 0.3s ease-out;
+}
+
+.contact-details:hover {
+    transform: translateY(12px);
+  }
+  
+
+/* img {
+    width: 15rem;
+} */
+
+/* 1200px is roughly 75em */
+@media (max-width: 75em) {
+    html {
+      font-size: 80%;
+    }
+}
+
+@media (max-width: 60em) {
+    html {
+      font-size: 70%;
+      color: rgb(67, 107, 172);
+    }
+}

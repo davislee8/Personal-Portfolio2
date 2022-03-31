@@ -1,0 +1,23 @@
+* {
+  background-color: rgb(207, 204, 204);
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+figcaption {
+  margin: 20px;
+  padding-left: 5rem;
+  text-decoration: underline rgb(170, 99, 99);
+  font-size: xx-large;
+  font-style: italic;
+  text-decoration-thickness: .4rem;
+}
+
+img {
+  margin: 2rem;
+  border-radius: 2rem;
+}

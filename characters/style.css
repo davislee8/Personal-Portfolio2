@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(195, 193, 193);
+}
+
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+figure {
+  margin: .5rem;
+}
+
+figcaption {
+  font-size: x-large;
+  text-align: center;
+  text-decoration: underline;
+  margin: 1rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(30, 41, 199);
+}
+
+figure img {
+  max-height: 20rem;
+  margin: 2rem;
+  border-radius: 2rem;
+  
+}
+
+button {
+  width: 10rem;
+  height: 3rem;
+  margin: 2rem;
+  background-color: rgb(59, 59, 170);
+  color: aliceblue;
+  font-size: large;
+  border-radius: 3rem;
+}
