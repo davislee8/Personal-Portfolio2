@@ -135,3 +135,33 @@ const pilotNames = pilots.map(pilot => pilot.name) // new array just contains pi
 
 // Ternary operator syntax: condition ? exprIfTrue : exprIfFalse
 
+// Reduce Example
+
+const swpilots = [
+  {
+    id: 10,
+    name: "Poe Dameron",
+    years: 14
+  },
+  {
+    id: 2,
+    name: "Temin 'Snap' Wexley",
+    years: 30
+  },
+  {
+    id: 41,
+    name: "Tallissan Lintra",
+    years: 16
+  },
+  {
+    id: 99,
+    name: "Ello Asty",
+    years: 22
+  },
+];
+
+const totalYears = swpilots.reduce((acc, pilot) => acc + pilot.years, 0) // totalYears should ===82
+
+const mostExpPilot = swpilots.reduce((oldest, pilot) => {
+  return (oldest.years || 0) > pilot.years ? oldest : pilot
+}, {})
