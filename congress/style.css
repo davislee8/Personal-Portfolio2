@@ -2,9 +2,47 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(210, 214, 239);
+}
+
+.title {
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    padding: 5rem;
+    text-decoration:underline;
+    text-decoration-color: rgb(104, 104, 152);
 }
 
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
+}
+
+figure {
+    padding: 2rem;
+    margin: 1rem;
+    border-style: inset;
+}
+
+figcaption {
+    font-size: 2rem;
+    color: rgb(72, 105, 126);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.seniority, li {
+    text-align: center;
+    padding: .3rem;
+    margin: 1rem;
+    font-size: xx-large;
+    color: rgb(72, 105, 126);
+}
+
+footer {
+    font-size: xx-large;
+    padding: 2rem;
+    text-align: center;
+    color: rgb(72, 105, 126);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
