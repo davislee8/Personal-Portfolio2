@@ -44,3 +44,7 @@ function populateShipView(shipData) {
 
   shipViewer.appendChild(shipImage)
 }
+
+modal.addEventListener('click', () => {
+  modal.classList.remove('is-active');
+})

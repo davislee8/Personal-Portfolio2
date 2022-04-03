@@ -1,6 +1,7 @@
 * {
     margin: 0;
-    padding: 0;
+    padding: 4rem;
+    border: 2rem;
     box-sizing: border-box;
   }
   
@@ -17,7 +18,13 @@
     font-size: xx-large;
     text-align: center;
   }
-  
+
+  img {
+    border-style: groove;
+    padding: 1rem;
+  }
+
+
   /* .modal-background {
     background-color: #333;
   } */
@@ -29,10 +36,18 @@
   ul {
   margin: 1rem;
   list-style-type: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: x-large;
+  
+  }
+
+  li {
+    padding: 2rem;
   }
   
+  
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: white;
-    font-size: x-large;
+    font-size: 2rem;
   }
