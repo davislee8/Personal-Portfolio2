@@ -111,6 +111,13 @@ figure {
 figure img {
     width: 30rem;
     border-radius: 2rem;
+    max-height: 16rem;
+    padding: 2rem;
+    border-style: inset;
+}
+
+img:hover {
+    transform: translateY(35px);
 }
 
 /* a:hover {
@@ -122,9 +129,10 @@ figure img {
 figcaption {
     background-color: #999999;
     text-align: center;
-    font-size: x-large;
+    font-size: xx-large;
     border-radius: 2px 2px 6px 6px;
-    padding: 2rem;
+    padding: 1rem;
+    margin: 2rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
