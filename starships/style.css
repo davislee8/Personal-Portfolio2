@@ -1,53 +1,59 @@
-* {
-    margin: 0;
-    padding: 4rem;
-    border: 2rem;
-    box-sizing: border-box;
-  }
-  
-  body {
-    background-color: #222222;
-  }
-  
-  .mainContainer {
-    display: flex;
-  }
-  
-  .box {
-    background-color: bisque;
-    font-size: xx-large;
-    text-align: center;
-  }
+body {
+  background-color: #222222;
+}
 
-  img {
-    border-style: groove;
-    padding: 1rem;
-  }
+header {
+  font-size: xx-large;
+  color: aliceblue;
+  text-align: center;
+}
 
+.mainContainer {
+  display: flex;
+}
 
-  /* .modal-background {
+.shipViewer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.shipViewer img {
+  padding: 5rem;
+}
+
+.box {
+  background-color: bisque;
+  font-size: xx-large;
+  text-align: center;
+}
+
+img {
+  /* padding: 1rem;
+  margin: 24rem; */
+}
+
+/* .modal-background {
     background-color: #333;
   } */
-  
-  .nav {
-    min-width: 16rem;
-  }
-  
-  ul {
+
+.nav {
+  min-width: 16rem;
+}
+
+ul {
   margin: 1rem;
   list-style-type: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: x-large;
-  
-  }
+}
 
-  li {
-    padding: 2rem;
-  }
-  
-  
-  a {
-    text-decoration: underline;
-    color: white;
-    font-size: 2rem;
-  }
+li {
+  padding: 2rem;
+}
+
+a {
+  text-decoration: underline;
+  color: white;
+  font-size: 2rem;
+}

@@ -17,11 +17,12 @@
 .senatorsDiv {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 figure {
     padding: 2rem;
-    margin: 7rem;
+    margin: 4rem;
     border: 1rem;
     border-style: inset;
     display: flex;

@@ -1,4 +1,7 @@
 import { senators } from '../data/senators.js'
+import { representatives } from '../data/representatives.js'
+
+const allCongressMembers = [...senators, ...representatives] // modern way to combine arrays.. like a badass
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
@@ -43,7 +46,15 @@ const mostSeniorMember = simplifiedSenators().reduce((acc, senator) => {
     return acc.seniority > senator.seniority ? acc : senator
 })
 
-seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name}`
+const biggestMissedVotesPct = simplifiedSenators().reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
+
+// console.log(biggestMissedVotesPct.missedVotesPct);
+
+const biggestVacationerList = simplifiedSenators().filter(senator => senator.missedVotesPct === biggestMissedVotesPct.missedVotesPct).map(senator => senator.name).join(' and ')
+
+// console.log(biggestVacationerList)
+
+seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 
 simplifiedSenators().forEach(senator => {
