@@ -18,7 +18,6 @@ const maleCharacters = people.filter((person) => person.gender === 'male') // el
 }) */
 
 // TODO: make a filter for female characters
-// TODO: make a filter for other characters
 
 const otherCharacters = people.filter((person) => {
   if (

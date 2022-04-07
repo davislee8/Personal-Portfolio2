@@ -12,8 +12,9 @@ main {
   justify-content: center;
 }
 
-figure {
+figure:hover {
   margin: .5rem;
+  transform: translateY(35px);
 }
 
 figcaption {
@@ -29,7 +30,6 @@ figure img {
   max-height: 20rem;
   margin: 2rem;
   border-radius: 2rem;
-  
 }
 
 button {
