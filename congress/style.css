@@ -21,9 +21,9 @@
 }
 
 figure {
-    padding: 2rem;
+    padding: 1rem;
     margin: 2rem;
-    border: 3rem;
+    border: 1rem;
     border-style: inset;
     display: flex;
     flex-wrap: wrap;
