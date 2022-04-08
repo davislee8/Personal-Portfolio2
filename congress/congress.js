@@ -7,7 +7,7 @@ const allCongressMembers = [...senators, ...representatives] // modern way to co
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
-const loyaltyList = document.querySelector('.loyaltyList')
+// const loyaltyList = document.querySelector('.loyaltyList')
 
 function simplifiedSenators() {
     return senators.map(senator => {
@@ -56,7 +56,7 @@ const biggestVacationerList = simplifiedSenators().filter(senator => senator.mis
 
 // console.log(biggestVacationerList)
 
-seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
+// seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 
 simplifiedSenators().forEach(senator => {

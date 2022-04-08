@@ -8,7 +8,7 @@
 .title {
     text-align: center;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    font-size: 5rem;
+    font-size: 4rem;
     padding: 5rem;
     text-decoration: underline;
     text-decoration-color: rgb(104, 104, 152);
@@ -22,8 +22,8 @@
 
 figure {
     padding: 2rem;
-    margin: 4rem;
-    border: 1rem;
+    margin: 2rem;
+    border: 3rem;
     border-style: inset;
     display: flex;
     flex-wrap: wrap;
@@ -37,13 +37,13 @@ figcaption {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.seniority, li {
+/* .seniority, li {
     text-align: center;
     padding: .3rem;
     margin: 1rem;
     font-size: xx-large;
     color: rgb(72, 105, 126);
-}
+} */
 
 footer {
     font-size: xx-large;
