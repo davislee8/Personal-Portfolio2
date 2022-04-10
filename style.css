@@ -1,10 +1,10 @@
 :root {
-    --main-green: #3ba776;
+    --main-green: #5d8e92;
     --main-white: #fff;
     --light-green: #29D987;
     --blue: #5bb8ae;
     --orange: #ffa856;
-    --brown: #8b766f;
+    --brown: #af705b;
 }
 
 * {
@@ -25,10 +25,11 @@ a {
 
 #navbar {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--brown);
     position: fixed;
     width: 100%;
+    border-radius: 1rem;
 }
 
 .navList a:hover {
@@ -112,9 +113,9 @@ figure img {
     width: 30rem;
     border-radius: .5rem;
     max-height: 16rem;
-    padding: 2rem;
+    padding: .8rem;
     border-style: inset;
-    margin: 3rem;
+    margin: 1em;
 }
 
 img:hover {
@@ -133,7 +134,7 @@ figcaption {
     font-size: xx-large;
     border-radius: 2px 2px 6px 6px;
     padding: 1rem;
-    margin: 2rem;
+    margin: .8rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
