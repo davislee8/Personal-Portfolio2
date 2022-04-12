@@ -43,6 +43,11 @@ ul {
   font-size: x-large;
 }
 
+li:hover {
+  padding: 2rem;
+  background-color: rgb(160, 115, 115);
+}
+
 li {
   padding: 2rem;
 }
