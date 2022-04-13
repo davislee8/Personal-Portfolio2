@@ -29,17 +29,17 @@ figcaption {
 figure img {
   max-height: 20rem;
   margin: 2rem;
-  border-radius: 2rem;
+  border-radius: .5rem;
 }
 
 button {
   width: 10rem;
   height: 3rem;
-  margin: 5rem;
-  background-color: rgb(59, 59, 170);
+  margin: 6rem;
+  background-color: rgb(49, 49, 145);
   color: aliceblue;
   font-size: large;
-  border-radius: 3rem;
+  border-radius: .5rem;
 }
 
 header {
