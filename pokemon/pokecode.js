@@ -33,16 +33,39 @@ newButton.textContent = "New Pokemon";
 const header = document.querySelector("header");
 header.appendChild(newButton);
 newButton.addEventListener("click", () => {
+
+  const pokeName = prompt('What is the name of your new Pokemon?', 'Drizzydon')
+  const pokeHeight = prompt("What is the Pokemon's height?", 20)
+  const pokeWeight = prompt("What is the Pokemon's weight?", 1000)
+  const pokeAbilities = prompt("What are your Pokemon's abilities? (use a comma-separated list)")
+  const pokeTypes = prompt("What are your Pokemon's types? (up to 2 types separated by a space)")
+
   const newPokemon = new Pokemon(
-    "Drizzydon",
-    45,
-    2398,
-    [{ability: { name:"run-away"}}, {ability: {name: "gluttony"}}],
-    ["ground"]
-  );
+    pokeName,
+    pokeHeight,
+    pokeWeight,
+    makeAbilitiesArray(pokeAbilities),
+    makeTypesArray(pokeTypes),
+  )
   console.log(newPokemon)
   populatePokeCard(newPokemon)
 });
+
+function makeAbilitiesArray(commaString) {
+  return commaString.split(',').map((abilityName) => {
+    return {
+      ability: { name: abilityName}
+    }
+  })
+}
+
+function makeTypesArray(spacedString) {
+  return spacedString.split(' ').map((typeName) => {
+    return {
+      type: { name: typeName}
+    }
+  })
+}
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
