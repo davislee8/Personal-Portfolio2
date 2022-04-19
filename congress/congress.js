@@ -1,13 +1,16 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
-// const main = document.querySelector('main')
 
 const allCongressMembers = [...senators, ...representatives] // modern way to combine arrays.. like a badass
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
+const header = document.querySelector('header')
+
 // const loyaltyList = document.querySelector('.loyaltyList')
+
+
 
 function simplifiedSenators() {
     return senators.map(senator => {
@@ -24,6 +27,7 @@ function simplifiedSenators() {
         }
     })
 }
+
 
 const simpleSenators = simplifiedSenators()
 
@@ -59,11 +63,34 @@ const biggestVacationerList = simplifiedSenators().filter(senator => senator.mis
 // seniorityHeading.textContent = `The most senior member of the senate is ${mostSeniorMember.name} and the biggest vacationers are ${biggestVacationerList}`
 
 
-simplifiedSenators().forEach(senator => {
-    if(senator.loyaltyPct === 100) {
-        let listItem = document.createElement('li')
-        listItem.textContent = senator.name
-        loyaltyList.appendChild(listItem)
-    }
-})
+// simplifiedSenators().forEach(senator => {
+//     if(senator.loyaltyPct === 100) {
+//         let listItem = document.createElement('li')
+//         listItem.textContent = senator.name
+//         loyaltyList.appendChild(listItem)
+//     }
+// })
 
+// Attempt to add filtering below //
+
+const allSenators = senators.filter((senators) => senators === 'senators')
+
+const senatorsButton = document.createElement('button')
+senatorsButton.textContent = 'All Senators'
+senatorsButton.addEventListener('click', () => populateDOM(allSenators))
+
+header.appendChild(senatorsButton)
+
+
+
+
+
+const allRepresentatives = representatives.filter((representatives) => representatives === 'representatives')
+
+const representativesButton = document.createElement('button')
+representativesButton.textContent = 'All Representatives'
+representativesButton.addEventListener('click', () => populateDOM(allRepresentatives))
+
+header.appendChild(representativesButton)
+
+populateDOM(senators)
