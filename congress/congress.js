@@ -32,7 +32,11 @@ function simplifiedSenators() {
 const simpleSenators = simplifiedSenators()
 
 function populateSenatorDiv(senatorArray) {
-    simpleSenators.forEach(senator => {
+    console.log('simplesenators')
+    while(senatorDiv.firstChild) {
+        senatorDiv.removeChild(senatorDiv.firstChild)
+    }
+        senatorArray.forEach(senator => {
         const senFigure = document.createElement('figure')
         const figImg = document.createElement('img')
         const figCaption = document.createElement('figcaption')
@@ -73,24 +77,30 @@ const biggestVacationerList = simplifiedSenators().filter(senator => senator.mis
 
 // Attempt to add filtering below //
 
-const allSenators = senators.filter((senators) => senators === 'senators')
+const maleSenators = simpleSenators.filter((senators) => senators.gender === 'M')
 
-const senatorsButton = document.createElement('button')
-senatorsButton.textContent = 'All Senators'
-senatorsButton.addEventListener('click', () => populateDOM(allSenators))
+const maleSenatorsButton = document.createElement('button')
+maleSenatorsButton.textContent = 'Male Senators'
+maleSenatorsButton.addEventListener('click', () => {
+    console.log('click')
+    populateSenatorDiv(maleSenators)
+})
 
-header.appendChild(senatorsButton)
+header.appendChild(maleSenatorsButton)
+
+console.log(maleSenators)
 
 
 
+ 
+ 
 
+// const allRepresentatives = representatives.filter((representatives) => representatives === 'representatives')
 
-const allRepresentatives = representatives.filter((representatives) => representatives === 'representatives')
+// const representativesButton = document.createElement('button')
+// representativesButton.textContent = 'All Representatives'
+// representativesButton.addEventListener('click', () => populateDOM(allRepresentatives))
 
-const representativesButton = document.createElement('button')
-representativesButton.textContent = 'All Representatives'
-representativesButton.addEventListener('click', () => populateDOM(allRepresentatives))
+// header.appendChild(representativesButton)
 
-header.appendChild(representativesButton)
-
-populateDOM(senators)
+// populateDOM(senators)
