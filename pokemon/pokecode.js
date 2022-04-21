@@ -54,13 +54,14 @@ newButton.addEventListener("click", () => {
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
   );
-
+    // need to also collect 3 moves from the user to put into my moves property
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes)
+    //need to get an array of moves added here
   );
   console.log(newPokemon);
   populatePokeCard(newPokemon);
@@ -81,6 +82,8 @@ function makeTypesArray(spacedString) {
     };
   });
 }
+
+//TODO: mkaeMovesArray(spaced or comma string)
 
 const pokeGrid = document.querySelector(".pokeGrid");
 

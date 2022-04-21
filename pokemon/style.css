@@ -1,12 +1,12 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    background-color: rgb(116, 195, 195);
 }
 
 .pokeGrid {
     display: flex;
     flex-wrap: wrap;
-    margin: 5rem;
 }
 
 .scene {
@@ -20,9 +20,10 @@
    width: 100%;
    height: 100%;
    cursor: pointer;
-   transition: transform 1s;
+   transition: transform 1.5s;
    transform-style: preserve-3d;
    position: relative;
+   text-transform: capitalize;
 }
 
 
@@ -31,6 +32,8 @@
     height: 100%;
     position: absolute;
     backface-visibility: hidden;
+    border-radius: 15px;
+    padding: .5rem;
 }
 
 .card.is-flipped {
@@ -44,12 +47,46 @@
 .back {
     background-color: rgb(161, 147, 190);
     transform: rotateY(180deg);
+    border-radius: 1rem;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 figure img {
-    width: 200px;
+    width: 150px;
+    background-color: aqua;
+    margin: rem;
+    border-radius: 1rem;
 }
 
 figcaption {
     text-align: center;
+    padding: 1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    border-radius: .7rem;
+}
+
+ul {
+    list-style-type: '\01F600';
+}
+
+h3 {
+    font-size: 3.5rem;
+    text-align: center;
+    text-decoration: underline;
+    padding: 3rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+img {
+
 }
