@@ -83,6 +83,7 @@ function makeTypesArray(spacedString) {
   });
 }
 
+
 //TODO: mkaeMovesArray(spaced or comma string)
 
 const pokeGrid = document.querySelector(".pokeGrid");
@@ -133,7 +134,7 @@ function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
   pokeBack.className = "cardFace back";
   const label = document.createElement("h4");
-  label.textContent = "Abilities";
+  label.textContent = "Abilities,";
   pokeBack.appendChild(label);
   const abilityList = document.createElement("ul");
   pokemon.abilities.forEach((abilityItem) => {
@@ -192,4 +193,3 @@ function getPokemonByType(type) {
 }
 // now figure out how to display this count in the UI
 
-console.log(getPokemonByType("poison"));
