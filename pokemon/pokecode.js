@@ -76,7 +76,7 @@ function makeAbilitiesArray(commaString) {
 }
 
 function makeTypesArray(spacedString) {
-  return spacedString.split(" ").map((typeName) => {
+  return spacedString.split(' ').map((typeName) => {
     return {
       type: { name: typeName },
     };
@@ -135,6 +135,7 @@ function populateCardBack(pokemon) {
   pokeBack.className = "cardFace back";
   const label = document.createElement("h4");
   label.textContent = "Abilities,";
+  // label.textContent = "Types,"
   pokeBack.appendChild(label);
   const abilityList = document.createElement("ul");
   pokemon.abilities.forEach((abilityItem) => {
@@ -186,7 +187,7 @@ function getPokeTypeColor(pokeType) {
   return color;
 }
 
-await loadPokemon(0, 250);
+await loadPokemon(0, 5);
 
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type);
