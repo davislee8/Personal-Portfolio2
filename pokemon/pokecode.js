@@ -67,17 +67,6 @@ newButton.addEventListener("click", () => {
   populatePokeCard(newPokemon);
 });
 
-const fireFilterButton = loadedPokemon.filter(
-  (loadedPokemon) => loadedPokemon.types == "fire"
-);
-
-const fireButton = document.createElement("button");
-fireButton.textContent = "Fire Pokemon";
-fireButton.addEventListener("click", () => {
-  loadPokemon(fireFilterButton);
-});
-
-header.appendChild(fireButton);
 
 function makeAbilitiesArray(commaString) {
   return commaString.split(",").map((abilityName) => {
