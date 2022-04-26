@@ -99,6 +99,7 @@ function populatePokeCard(pokemon) {
 
   pokeCard.appendChild(populateCardFront(pokemon));
   pokeCard.appendChild(populateCardBack(pokemon));
+  pokeCard.appendChild(populateCardBackTypes(pokemon));
   pokeScene.appendChild(pokeCard);
   pokeGrid.appendChild(pokeScene);
 }
@@ -108,13 +109,13 @@ function populateCardFront(pokemon) {
   pokeFront.className = "cardFace front";
 
   const pokeType1 = pokemon.types[0].type.name
-  //const pokeType2 = pokemon.types[1]?.type.name
-  // console.log(pokeType1, pokeType2)
-  // console.log(getPokeTypeColor(pokeType1))
+  const pokeType2 = pokemon.types[1]?.type.name
+  console.log(pokeType1, pokeType2)
+  console.log(getPokeTypeColor(pokeType1))
   pokeFront.style.setProperty('background', getPokeTypeColor(pokeType1))
-/*   if(pokeType2) {
-    pokeFront.style.setProperty('background', `linear-gradient(${getPokeTypeColor(pokeType1)}, {$getPokeTypeColor(pokeType2)})`)
-  } */
+  //  if(pokeType2) {
+  //   pokeFront.style.setProperty('background', `linear-gradient(${getPokeTypeColor(pokeType1)}, {$getPokeTypeColor(pokeType2)})`)
+  // } 
   const pokeImg = document.createElement('img')
   if (pokemon.id > 9000) {
     // load local image
@@ -135,7 +136,6 @@ function populateCardBack(pokemon) {
   pokeBack.className = "cardFace back";
   const label = document.createElement("h4");
   label.textContent = "Abilities,";
-  // label.textContent = "Types,"
   pokeBack.appendChild(label);
   const abilityList = document.createElement("ul");
   pokemon.abilities.forEach((abilityItem) => {
@@ -145,6 +145,22 @@ function populateCardBack(pokemon) {
   });
   pokeBack.appendChild(abilityList);
   return pokeBack;
+}
+
+function populateCardBackTypes(pokemon) {
+  const pokeBack = document.createElement("div")
+  pokeBack.className = "cardFace back"
+  const label = document.createElement("h4")
+  label.textContent = "Types,"
+  pokeBack.appendChild(label)
+  const typesList = document.createElement("ul")
+  pokemon.types.forEach((typesItem) => {
+    const listItem = document.createElement("li")
+    listItem.textContent = typesItem.type.name
+    typesList.appendChild(listItem)
+  })
+  pokeBack.appendChild(typesList)
+  return pokeBack
 }
 
 function getPokeTypeColor(pokeType) {
