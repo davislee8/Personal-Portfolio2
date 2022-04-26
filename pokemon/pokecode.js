@@ -54,7 +54,7 @@ newButton.addEventListener("click", () => {
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
   );
-    // need to also collect 3 moves from the user to put into my moves property
+  // need to also collect 3 moves from the user to put into my moves property
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
@@ -67,6 +67,18 @@ newButton.addEventListener("click", () => {
   populatePokeCard(newPokemon);
 });
 
+const fireFilterButton = loadedPokemon.filter(
+  (loadedPokemon) => loadedPokemon.types == "fire"
+);
+
+const fireButton = document.createElement("button");
+fireButton.textContent = "Fire Pokemon";
+fireButton.addEventListener("click", () => {
+  loadPokemon(fireFilterButton);
+});
+
+header.appendChild(fireButton);
+
 function makeAbilitiesArray(commaString) {
   return commaString.split(",").map((abilityName) => {
     return {
@@ -76,15 +88,14 @@ function makeAbilitiesArray(commaString) {
 }
 
 function makeTypesArray(spacedString) {
-  return spacedString.split(' ').map((typeName) => {
+  return spacedString.split(" ").map((typeName) => {
     return {
       type: { name: typeName },
     };
   });
 }
 
-
-//TODO: mkaeMovesArray(spaced or comma string)
+//TODO: makeMovesArray(spaced or comma string)
 
 const pokeGrid = document.querySelector(".pokeGrid");
 
@@ -98,8 +109,8 @@ function populatePokeCard(pokemon) {
   );
 
   pokeCard.appendChild(populateCardFront(pokemon));
+  // pokeCard.appendChild(populateCardBackTypes(pokemon));
   pokeCard.appendChild(populateCardBack(pokemon));
-  pokeCard.appendChild(populateCardBackTypes(pokemon));
   pokeScene.appendChild(pokeCard);
   pokeGrid.appendChild(pokeScene);
 }
@@ -108,15 +119,11 @@ function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
   pokeFront.className = "cardFace front";
 
-  const pokeType1 = pokemon.types[0].type.name
-  const pokeType2 = pokemon.types[1]?.type.name
-  console.log(pokeType1, pokeType2)
-  console.log(getPokeTypeColor(pokeType1))
-  pokeFront.style.setProperty('background', getPokeTypeColor(pokeType1))
-  //  if(pokeType2) {
-  //   pokeFront.style.setProperty('background', `linear-gradient(${getPokeTypeColor(pokeType1)}, {$getPokeTypeColor(pokeType2)})`)
-  // } 
-  const pokeImg = document.createElement('img')
+  const pokeType1 = pokemon.types[0].type.name;
+  getPokeTypeColor(pokeType1);
+  pokeFront.style.setProperty("background", getPokeTypeColor(pokeType1));
+
+  const pokeImg = document.createElement("img");
   if (pokemon.id > 9000) {
     // load local image
     pokeImg.src = "../images/pokeball.png";
@@ -135,33 +142,21 @@ function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
   pokeBack.className = "cardFace back";
   const label = document.createElement("h4");
-  label.textContent = "Abilities,";
+  label.textContent = "Abilities";
   pokeBack.appendChild(label);
+
   const abilityList = document.createElement("ul");
   pokemon.abilities.forEach((abilityItem) => {
     const listItem = document.createElement("li");
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
+  
   pokeBack.appendChild(abilityList);
   return pokeBack;
 }
 
-function populateCardBackTypes(pokemon) {
-  const pokeBack = document.createElement("div")
-  pokeBack.className = "cardFace back"
-  const label = document.createElement("h4")
-  label.textContent = "Types,"
-  pokeBack.appendChild(label)
-  const typesList = document.createElement("ul")
-  pokemon.types.forEach((typesItem) => {
-    const listItem = document.createElement("li")
-    listItem.textContent = typesItem.type.name
-    typesList.appendChild(listItem)
-  })
-  pokeBack.appendChild(typesList)
-  return pokeBack
-}
+//Above add types list item.
 
 function getPokeTypeColor(pokeType) {
   let color;
@@ -203,10 +198,9 @@ function getPokeTypeColor(pokeType) {
   return color;
 }
 
-await loadPokemon(0, 5);
+await loadPokemon(0, 50);
 
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type);
 }
 // now figure out how to display this count in the UI
-
