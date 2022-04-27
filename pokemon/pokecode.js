@@ -42,9 +42,16 @@ class Pokemon {
   }
 }
 
+const header = document.querySelector("header");
+const loadButton = document.createElement('button')
+loadButton.textContent = 'Load Pokemon'
+header.appendChild(loadButton)
+loadButton.addEventListener('click', async () => {
+  await loadPokemon(0, 250);
+})
+
 const newButton = document.createElement("button");
 newButton.textContent = "New Pokemon";
-const header = document.querySelector("header");
 header.appendChild(newButton);
 newButton.addEventListener("click", () => {
   const pokeName = prompt("What is the name of your new Pokemon?", "Drizzydon");
@@ -189,8 +196,6 @@ function getPokeTypeColor(pokeType) {
   return color;
 }
 
-await loadPokemon(0, 50);
-
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type);
 }
@@ -198,5 +203,14 @@ function getPokemonByType(type) {
 const typeSelector = document.querySelector('#type-select')
 typeSelector.addEventListener('change', (event) => {
   const usersTypeChoice = event.target.value.toLowerCase()
+  if(event.target.value === '--Please choose a Pokemon type--') {
+    loadedPokemon.forEach((singleLoadedPokemon) => {
+      populatePokeCard(singleLoadedPokemon)})
+    return
+  }
   const pokemonByType = getPokemonByType(usersTypeChoice)
+  removeChildren(pokeGrid) // cleared out the grid from all pokemon
+  // now just loop through the filtered array and populate
+  pokemonByType.forEach((eachSinglePokemon) => populatePokeCard
+  (eachSinglePokemon))
 })
