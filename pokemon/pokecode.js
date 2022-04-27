@@ -1,3 +1,5 @@
+import { removeChildren } from'../utils/index.js'
+
 const getAPIData = async (url) => {
   try {
     const result = await fetch(url);
@@ -192,4 +194,9 @@ await loadPokemon(0, 50);
 function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type);
 }
-// now figure out how to display this count in the UI
+
+const typeSelector = document.querySelector('#type-select')
+typeSelector.addEventListener('change', (event) => {
+  const usersTypeChoice = event.target.value.toLowerCase()
+  const pokemonByType = getPokemonByType(usersTypeChoice)
+})
