@@ -1,4 +1,4 @@
-import { removeChildren } from'../utils/index.js'
+import { removeChildren } from "../utils/index.js";
 
 const getAPIData = async (url) => {
   try {
@@ -43,12 +43,15 @@ class Pokemon {
 }
 
 const header = document.querySelector("header");
-const loadButton = document.createElement('button')
-loadButton.textContent = 'Load Pokemon'
-header.appendChild(loadButton)
-loadButton.addEventListener('click', async () => {
-  await loadPokemon(0, 250);
-})
+const loadButton = document.createElement("button");
+loadButton.textContent = "Load Pokemon";
+header.appendChild(loadButton);
+loadButton.addEventListener("click", async () => {
+  if (loadedPokemon.length === 0) {
+    removeChildren(pokeGrid);
+    await loadPokemon(0, 250);
+  }
+});
 
 const newButton = document.createElement("button");
 newButton.textContent = "New Pokemon";
@@ -75,7 +78,6 @@ newButton.addEventListener("click", () => {
   console.log(newPokemon);
   populatePokeCard(newPokemon);
 });
-
 
 function makeAbilitiesArray(commaString) {
   return commaString.split(",").map((abilityName) => {
@@ -149,7 +151,7 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
   });
-  
+
   pokeBack.appendChild(abilityList);
   return pokeBack;
 }
@@ -200,17 +202,19 @@ function getPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type);
 }
 
-const typeSelector = document.querySelector('#type-select')
-typeSelector.addEventListener('change', (event) => {
-  const usersTypeChoice = event.target.value.toLowerCase()
-  if(event.target.value === '--Please choose a Pokemon type--') {
-    loadedPokemon.forEach((singleLoadedPokemon) => {
-      populatePokeCard(singleLoadedPokemon)})
-    return
+const typeSelector = document.querySelector("#type-select");
+typeSelector.addEventListener("change", (event) => {
+  removeChildren(pokeGrid);
+  const usersTypeChoice = event.target.value.toLowerCase();
+  if (event.target.value === "Show All Pokemon") {
+    loadedPokemon.forEach((singleLoadedPokemon) =>
+      populatePokeCard(singleLoadedPokemon)
+    );
+  } else {
+    const pokemonByType = getPokemonByType(usersTypeChoice);
+    // now just loop through the filtered array and populate
+    pokemonByType.forEach((eachSinglePokemon) =>
+      populatePokeCard(eachSinglePokemon)
+    );
   }
-  const pokemonByType = getPokemonByType(usersTypeChoice)
-  removeChildren(pokeGrid) // cleared out the grid from all pokemon
-  // now just loop through the filtered array and populate
-  pokemonByType.forEach((eachSinglePokemon) => populatePokeCard
-  (eachSinglePokemon))
-})
+});
