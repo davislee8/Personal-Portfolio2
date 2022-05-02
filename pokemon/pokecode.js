@@ -32,13 +32,14 @@ async function loadPokemon(offset = 0, limit = 25) {
 }
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types) {
+  constructor(name, height, weight, abilities, types, moves) {
     (this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
-      (this.types = types);
+      (this.types = types),
+      (this.moves = moves);
   }
 }
 
@@ -66,14 +67,17 @@ newButton.addEventListener("click", () => {
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
   );
-  // need to also collect 3 moves from the user to put into my moves property
+  const pokeMoves = prompt(
+    "What are your Pokemon's moves? (up to 2 moves separated by a space"
+  );
+
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
-    makeTypesArray(pokeTypes)
-    //need to get an array of moves added here
+    makeTypesArray(pokeTypes),
+    makeMovesArray(pokeMoves)
   );
   console.log(newPokemon);
   populatePokeCard(newPokemon);
@@ -91,6 +95,14 @@ function makeTypesArray(spacedString) {
   return spacedString.split(" ").map((typeName) => {
     return {
       type: { name: typeName },
+    };
+  });
+}
+
+function makeMovesArray(spacedString) {
+  return spacedString.split(" ").map((movesName) => {
+    return {
+      type: { name: movesName },
     };
   });
 }
@@ -162,8 +174,8 @@ function populateCardBack(pokemon) {
     const listItem = document.createElement("li");
     listItem.textContent = typeItem.type.name;
     typeList.appendChild(listItem);
+    pokeBack.appendChild(typeList);
   });
-  pokeBack.appendChild(typeList);
 
   const label = document.createElement("h4");
   label.textContent = "Abilities";
@@ -174,12 +186,30 @@ function populateCardBack(pokemon) {
     const listItem = document.createElement("li");
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
+    pokeBack.appendChild(abilityList);
   });
 
-  pokeBack.appendChild(abilityList);
+  const heightLabel = document.createElement("h5");
+  heightLabel.textContent = `Height:${pokemon.height}`;
+  pokeBack.appendChild(heightLabel);
+  const weightLabel = document.createElement("h5");
+  weightLabel.textContent = `Weight:${pokemon.weight}`;
+  pokeBack.appendChild(weightLabel);
+
+  const movesLabel = document.createElement("h4");
+  typeLabel.textContent = "Move(s)";
+  pokeBack.appendChild(movesLabel);
+
+  const moveList = document.createElement("ul");
+  pokemon.moves.forEach((moveItem) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = moveItem.move.name;
+    moveList.appendChild(listItem);
+    pokeBack.appendChild(moveList);
+  });
+
   return pokeBack;
 }
-
 
 function getPokeTypeColor(pokeType) {
   let color;
@@ -235,7 +265,6 @@ typeSelector.addEventListener("change", (event) => {
     );
   } else {
     const pokemonByType = getPokemonByType(usersTypeChoice);
-    // now just loop through the filtered array and populate
     pokemonByType.forEach((eachSinglePokemon) =>
       populatePokeCard(eachSinglePokemon)
     );
