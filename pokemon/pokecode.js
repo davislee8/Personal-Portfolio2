@@ -24,7 +24,7 @@ async function loadPokemon(offset = 0, limit = 25) {
       name: pokemon.name,
       types: pokemon.types,
       abilities: pokemon.abilities,
-      moves: pokemon.moves.slice(0, 3),
+      moves: pokemon.moves.slice(0, 2),
     };
     loadedPokemon.push(simplifiedPokemon);
     populatePokeCard(simplifiedPokemon);

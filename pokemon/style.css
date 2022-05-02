@@ -132,7 +132,7 @@ button {
 }
 
 h4 {
-  padding: 1.4rem;
+  padding: .7rem;
   padding-bottom: 0;
   text-decoration: underline;
   font-family: "M PLUS 2", sans-serif;
@@ -141,8 +141,10 @@ h4 {
 }
 
 h5 {
+  font-size: larger;
+  color: rgb(160, 86, 86);
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   font-family: "M PLUS 2", sans-serif;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Slab", serif;
