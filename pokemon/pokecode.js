@@ -67,9 +67,6 @@ newButton.addEventListener("click", () => {
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
   );
-  const pokeMoves = prompt(
-    "What are your Pokemon's moves? (up to 2 moves separated by a space"
-  );
 
   const newPokemon = new Pokemon(
     pokeName,
@@ -77,7 +74,7 @@ newButton.addEventListener("click", () => {
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
-    makeMovesArray(pokeMoves)
+    makeMovesArray(pokeMove)
   );
   console.log(newPokemon);
   populatePokeCard(newPokemon);
@@ -100,9 +97,9 @@ function makeTypesArray(spacedString) {
 }
 
 function makeMovesArray(spacedString) {
-  return spacedString.split(" ").map((movesName) => {
+  return spacedString.split(" ").map((moveName) => {
     return {
-      type: { name: movesName },
+      type: { name: moveName },
     };
   });
 }
@@ -166,7 +163,7 @@ function populateCardBack(pokemon) {
   pokeBack.style.setProperty("background", getPokeTypeColor(pokeType));
 
   const typeLabel = document.createElement("h4");
-  typeLabel.textContent = "Type(s)";
+  typeLabel.textContent = "Types";
   pokeBack.appendChild(typeLabel);
 
   const typeList = document.createElement("ul");
@@ -187,18 +184,6 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
     pokeBack.appendChild(abilityList);
-  });
-
-  const movesLabel = document.createElement("h4");
-  movesLabel.textContent = "Move(s)";
-  pokeBack.appendChild(movesLabel);
-
-  const moveList = document.createElement("ul");
-  pokemon.moves.forEach((moveItem) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = moveItem.move.name;
-    moveList.appendChild(listItem);
-    pokeBack.appendChild(moveList);
   });
 
   const heightLabel = document.createElement("h5");

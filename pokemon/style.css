@@ -145,6 +145,8 @@ h5 {
   color: rgb(160, 86, 86);
   display: flex;
   justify-content: center;
+  padding-top: .5rem;
+  margin-top: .7rem;
   font-family: "M PLUS 2", sans-serif;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Slab", serif;
