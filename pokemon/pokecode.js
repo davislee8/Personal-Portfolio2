@@ -109,7 +109,6 @@ function populatePokeCard(pokemon) {
   );
 
   pokeCard.appendChild(populateCardFront(pokemon));
-  // pokeCard.appendChild(populateCardBackTypes(pokemon));
   pokeCard.appendChild(populateCardBack(pokemon));
   pokeScene.appendChild(pokeCard);
   pokeGrid.appendChild(pokeScene);
@@ -119,9 +118,18 @@ function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
   pokeFront.className = "cardFace front";
 
-  const pokeType1 = pokemon.types[0].type.name;
-  getPokeTypeColor(pokeType1);
-  pokeFront.style.setProperty("background", getPokeTypeColor(pokeType1));
+  const pokeType = pokemon.types[0].type.name;
+  const pokeType2 = pokemon.types[1]?.type.name;
+  getPokeTypeColor(pokeType);
+  pokeFront.style.setProperty("background", getPokeTypeColor(pokeType));
+  if (pokeType) {
+    pokeFront.style.setProperty(
+      "background",
+      `linear-gradient(${getPokeTypeColor}(pokeType)}, ${getPokeTypeColor(
+        pokeType2
+      )}`
+    );
+  }
 
   const pokeImg = document.createElement("img");
   if (pokemon.id > 9000) {
@@ -141,6 +149,22 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
   pokeBack.className = "cardFace back";
+
+  let pokeType = pokemon.types[0].type.name;
+  pokeBack.style.setProperty("background", getPokeTypeColor(pokeType));
+
+  const typeLabel = document.createElement("h4");
+  typeLabel.textContent = "Type(s)";
+  pokeBack.appendChild(typeLabel);
+
+  const typeList = document.createElement("ul");
+  pokemon.types.forEach((typeItem) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = typeItem.type.name;
+    typeList.appendChild(listItem);
+  });
+  pokeBack.appendChild(typeList);
+
   const label = document.createElement("h4");
   label.textContent = "Abilities";
   pokeBack.appendChild(label);
@@ -156,7 +180,6 @@ function populateCardBack(pokemon) {
   return pokeBack;
 }
 
-//Above add types list item.
 
 function getPokeTypeColor(pokeType) {
   let color;
