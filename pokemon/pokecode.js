@@ -189,15 +189,8 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(abilityList);
   });
 
-  const heightLabel = document.createElement("h5");
-  heightLabel.textContent = `Height:${pokemon.height}`;
-  pokeBack.appendChild(heightLabel);
-  const weightLabel = document.createElement("h5");
-  weightLabel.textContent = `Weight:${pokemon.weight}`;
-  pokeBack.appendChild(weightLabel);
-
   const movesLabel = document.createElement("h4");
-  typeLabel.textContent = "Move(s)";
+  movesLabel.textContent = "Move(s)";
   pokeBack.appendChild(movesLabel);
 
   const moveList = document.createElement("ul");
@@ -207,6 +200,13 @@ function populateCardBack(pokemon) {
     moveList.appendChild(listItem);
     pokeBack.appendChild(moveList);
   });
+
+  const heightLabel = document.createElement("h5");
+  heightLabel.textContent = `Height:${pokemon.height}`;
+  pokeBack.appendChild(heightLabel);
+  const weightLabel = document.createElement("h5");
+  weightLabel.textContent = `Weight:${pokemon.weight}`;
+  pokeBack.appendChild(weightLabel);
 
   return pokeBack;
 }

@@ -139,3 +139,11 @@ h4 {
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Slab", serif;
 }
+
+h5 {
+  display: flex;
+  justify-content: flex-end;
+  font-family: "M PLUS 2", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Slab", serif;
+}
