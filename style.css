@@ -26,7 +26,7 @@ a {
 #navbar {
     display: flex;
     justify-content: center;
-    background-color: var(--brown);
+    background-image: url(../images/fancy-01.jpg);
     position: fixed;
     width: 30%;
     border-radius: 1rem;
@@ -51,6 +51,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-image: url(../images/fancy.jpeg);
 }
 
 h1 {
@@ -67,26 +68,28 @@ h2 {
 ul {
     display: flex;
     list-style-type: none;
+    background-image: url(../images/fancy-01.jpg);
 }
 
 #projects {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--blue);
+    background-color:rgb(184, 184, 214);
 }
 
 .project-tiles {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-image: url(../images/fancy-01.jpg);
 }
 
 #contact {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--brown);
+    background-color:rgb(139, 139, 193)
 }
 
 .contact-links {
@@ -102,7 +105,7 @@ ul {
 footer {
     padding: 3rem;
     text-align: center;
-    background-color: var(--brown);
+    background-color: rgb(115, 115, 165);
     color: var(--orange);
 }
 
@@ -112,10 +115,9 @@ figure {
 
 figure img {
     width: 30rem;
-    border-radius: .5rem;
+    border-radius: 2rem;
     max-height: 16rem;
     padding: .8rem;
-    border-style: inset;
     margin: 1em;
 }
 
@@ -130,7 +132,8 @@ img:hover {
 } */
 
 figcaption {
-    background-color: #999999;
+    background-color: #6ca6c0;
+    color: rgb(149, 16, 123);
     text-align: center;
     font-size: xx-large;
     border-radius: 2px 2px 6px 6px;
