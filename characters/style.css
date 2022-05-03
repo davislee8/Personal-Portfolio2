@@ -37,9 +37,10 @@ figure {
 }
 
 button {
-  width: 10rem;
-  height: 3rem;
+  width: 12rem;
+  height: 4rem;
   margin: 6rem;
+  border-color: rgb(180, 127, 127);
   background-image: url(../images/starwarss.jpg);
   color: rgb(251, 255, 21);
   font-size: large;
