@@ -66,7 +66,10 @@ newButton.addEventListener("click", () => {
   );
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
+  );const pokeMoves = prompt(
+    "What are your Pokemon's moves? (up to 2 types separated by a space)"
   );
+
 
   const newPokemon = new Pokemon(
     pokeName,
@@ -74,7 +77,7 @@ newButton.addEventListener("click", () => {
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
-    makeMovesArray(pokeMove)
+    makeMovesArray(pokeMoves)
   );
   console.log(newPokemon);
   populatePokeCard(newPokemon);
@@ -184,6 +187,18 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name;
     abilityList.appendChild(listItem);
     pokeBack.appendChild(abilityList);
+  });
+
+  const moveLabel = document.createElement("h4");
+  moveLabel.textContent = "Moves";
+  pokeBack.appendChild(moveLabel);
+
+  const movesList = document.createElement("ul");
+  pokemon.moves.forEach((moveItem) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = moveItem.move.name;
+    movesList.appendChild(listItem);
+    pokeBack.appendChild(movesList);
   });
 
   const heightLabel = document.createElement("h5");
