@@ -189,17 +189,17 @@ function populateCardBack(pokemon) {
     pokeBack.appendChild(abilityList);
   });
 
-  const moveLabel = document.createElement("h4");
-  moveLabel.textContent = "Moves";
-  pokeBack.appendChild(moveLabel);
+  // const moveLabel = document.createElement("h4");
+  // moveLabel.textContent = "Moves";
+  // pokeBack.appendChild(moveLabel);
 
-  const movesList = document.createElement("ul");
-  pokemon.moves.forEach((moveItem) => {
-    const listItem = document.createElement("li");
-    listItem.textContent = moveItem.move.name;
-    movesList.appendChild(listItem);
-    pokeBack.appendChild(movesList);
-  });
+  // const movesList = document.createElement("ul");
+  // pokemon.moves.forEach((moveItem) => {
+  //   const listItem = document.createElement("li");
+  //   listItem.textContent = moveItem.move.name;
+  //   movesList.appendChild(listItem);
+  //   pokeBack.appendChild(movesList);
+  // });
 
   const heightLabel = document.createElement("h5");
   heightLabel.textContent = `Height:${pokemon.height}`;
