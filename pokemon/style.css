@@ -66,13 +66,13 @@ header {
 
 #type-select {
   color: white;
-  width: 17rem;
-  height: 3.5rem;
+  width: 28rem;
+  height: 5rem;
   background-color: rgb(61, 174, 219);
   font-family: "M PLUS 2", sans-serif;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Slab", serif;
-  font-size: small;
+  font-size: x-large;
   padding: 1.2rem;
   margin: 1.5rem;
   border-style: inset;
@@ -133,12 +133,12 @@ h2 {
 }
 
 button {
-  width: 10rem;
-  height: 3rem;
+  width: 12rem;
+  height: 5rem;
   margin: 2rem;
   background-color: rgb(61, 174, 219);
   color: rgb(255, 255, 255);
-  font-size: large;
+  font-size: x-large;
   border-radius: 0.3rem;
   font-family: "M PLUS 2", sans-serif;
   font-family: "Roboto", sans-serif;
