@@ -24,11 +24,8 @@ a {
 }
 
 #navbar {
-    background-image: url(../images/fancy-01.jpg);
     position: fixed;
-    width: 30%;
-    border-radius: 10rem;
-    margin-left: 50rem;
+    width: 100%;
 }
 
 .navList a:hover {
@@ -65,9 +62,8 @@ h2 {
 
 ul {
     display: flex;
-    align-items: center;
+    justify-content: center;
     list-style-type: none;
-    border-radius: .7rem;
     background-image: url(../images/fancy-01.jpg);
 }
 
