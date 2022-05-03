@@ -15,10 +15,9 @@ figure {
 figcaption {
   display: flex;
   justify-content: center;
-  color: rgb(152, 152, 246);
+  color: rgb(189, 189, 212);
   margin: 20px; 
   /* padding: 1.5rem 3rem; */
-  text-decoration: underline rgb(170, 99, 99);
   font-size: 2.5rem;
   text-decoration-thickness: 0.4rem;
 }

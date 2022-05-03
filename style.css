@@ -118,7 +118,7 @@ figure img {
 }
 
 img:hover {
-    transform: translateY(35px);
+    transform: translateY(10px);
 }
 
 /* a:hover {
