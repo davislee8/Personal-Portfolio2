@@ -150,6 +150,10 @@ function populateCardBack(pokemon) {
   const pokeBack = document.createElement("div");
   pokeBack.className = "cardFace back";
 
+  const idItem = document.createElement('h1')
+  idItem.textContent = pokemon.id
+  pokeBack.appendChild(idItem)
+
   let pokeType = pokemon.types[0].type.name;
   pokeBack.style.setProperty("background", getPokeTypeColor(pokeType));
 
