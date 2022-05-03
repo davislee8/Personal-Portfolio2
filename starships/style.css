@@ -1,5 +1,5 @@
 body {
-  background-color: #222222;
+  background-color: #d08282;
 }
 
 header {
@@ -23,9 +23,13 @@ header {
 }
 
 .box {
-  background-color: bisque;
+  background-image: url(../images/starwarss.jpg);
+  color: rgba(251, 255, 23, 0.868);
   font-size: xx-large;
   text-align: center;
+  padding-top: 4rem;
+  width: 40rem;
+  height: 30rem;
 }
 
 /* .modal-background {
