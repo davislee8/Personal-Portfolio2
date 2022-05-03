@@ -25,6 +25,7 @@ async function loadPokemon(offset = 0, limit = 25) {
       types: pokemon.types,
       abilities: pokemon.abilities,
       moves: pokemon.moves.slice(0, 2),
+      hp: pokemon.stats[0].base_stat
     };
     loadedPokemon.push(simplifiedPokemon);
     populatePokeCard(simplifiedPokemon);
@@ -117,6 +118,10 @@ function populatePokeCard(pokemon) {
 function populateCardFront(pokemon) {
   const pokeFront = document.createElement("figure");
   pokeFront.className = "cardFace front";
+
+  const pokeHp = document.createElement('h5')
+  pokeHp.textContent = 'HP: ' + pokemon.hp
+  pokeFront.appendChild(pokeHp)
 
   const pokeType = pokemon.types[0].type.name;
   const pokeType2 = pokemon.types[1]?.type.name;
