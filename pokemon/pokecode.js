@@ -32,14 +32,13 @@ async function loadPokemon(offset = 0, limit = 25) {
 }
 
 class Pokemon {
-  constructor(name, height, weight, abilities, types, moves) {
+  constructor(name, height, weight, abilities, types,) {
     (this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
-      (this.types = types),
-      (this.moves = moves);
+      (this.types = types);
   }
 }
 
@@ -66,8 +65,6 @@ newButton.addEventListener("click", () => {
   );
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)"
-  );const pokeMoves = prompt(
-    "What are your Pokemon's moves? (up to 2 types separated by a space)"
   );
 
 
@@ -77,7 +74,6 @@ newButton.addEventListener("click", () => {
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
-    makeMovesArray(pokeMoves)
   );
   console.log(newPokemon);
   populatePokeCard(newPokemon);
@@ -95,14 +91,6 @@ function makeTypesArray(spacedString) {
   return spacedString.split(" ").map((typeName) => {
     return {
       type: { name: typeName },
-    };
-  });
-}
-
-function makeMovesArray(spacedString) {
-  return spacedString.split(" ").map((moveName) => {
-    return {
-      type: { name: moveName },
     };
   });
 }
