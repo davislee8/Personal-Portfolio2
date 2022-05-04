@@ -156,11 +156,12 @@ h4 {
 
 h5 {
   font-size: larger;
-  color: rgb(255, 255, 255);
+  color: rgb(49, 49, 184);
   display: flex;
-  justify-content: center;
+  justify-content:flex-end;
   font-family: "M PLUS 2", sans-serif;
   font-family: "Roboto", sans-serif;
   font-family: "Roboto Slab", serif;
-  padding-top: 2rem;
+  padding-top: .5rem;
+  padding-right: 1rem;
 }
