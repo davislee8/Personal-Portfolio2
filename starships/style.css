@@ -1,15 +1,16 @@
-body {
-  background-color: #d08282;
-}
-
 header {
-  font-size: xx-large;
-  color: aliceblue;
+  font-size: 3rem;
+  padding: 2rem;
   text-align: center;
+  color: aliceblue;
+  background-image: url(../images/star.jpg);
+  background-size: .3vw;
 }
 
 .mainContainer {
   display: flex;
+  background-image: url(../images/star.jpg);
+  background-size: 400rem;
 }
 
 .shipViewer {
@@ -47,17 +48,21 @@ ul {
   font-size: x-large;
 }
 
-li:hover {
-  padding: 2rem;
-  background-color: rgb(160, 115, 115);
+li {
+  padding: 1rem;
 }
 
 li {
-  padding: 2rem;
+  padding: rem;
 }
 
 a {
   text-decoration: underline;
   color: white;
   font-size: 2rem;
+}
+
+img {
+  border-style: solid;
+  border-width: 3rem;
 }
