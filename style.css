@@ -119,6 +119,7 @@ figure img {
 
 img:hover {
     transform: translateY(10px);
+    background-color: #ffa856;
 }
 
 /* a:hover {

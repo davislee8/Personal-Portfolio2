@@ -1,5 +1,5 @@
 * {
-  background-color: rgb(109, 82, 82);
+  background-color: rgb(100, 97, 97);
 }
 
 :root {
@@ -8,32 +8,23 @@
   box-sizing: border-box;
 }
 
-figure {
-  border-radius: 2rem;
+figure:hover {
+  transform: translateY(10px);
+  background-color: rgb(187, 140, 132);
 }
 
 figcaption {
-  display: flex;
-  justify-content: center;
-  color: rgb(189, 189, 212);
-  margin: 20px; 
-  /* padding: 1.5rem 3rem; */
+  color: rgb(218, 218, 230);
+  margin: 20px;
   font-size: 2.5rem;
-  text-decoration-thickness: 0.4rem;
-}
-
-img {
-  margin: 2rem;
-  border-radius: 1rem;
-}
-
-img:hover {
-  background-color: red;
+  margin: 1.5rem;
+  font-family: "Orelega One", cursive;
+  font-size: 2rem;
 }
 
 main {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   background-image: url(../images/starships.jpg);
 }
