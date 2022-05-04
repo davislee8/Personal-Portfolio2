@@ -199,10 +199,10 @@ function populateCardBack(pokemon) {
   // });
 
   const heightLabel = document.createElement("h5");
-  heightLabel.textContent = `Height:${pokemon.height}`;
+  heightLabel.textContent = `Height: - ${pokemon.height}`;
   pokeBack.appendChild(heightLabel);
   const weightLabel = document.createElement("h5");
-  weightLabel.textContent = `Weight:${pokemon.weight}`;
+  weightLabel.textContent = `Weight - ${pokemon.weight}`;
   pokeBack.appendChild(weightLabel);
 
   return pokeBack;

@@ -17,7 +17,7 @@ for (let i = 0; i < films.length; i++) {
   figImage.src = `https://starwars-visualguide.com/assets/img/films/${filmNum}.jpg`
 
   figCaption.textContent = films[i].title
-  movieCaption.textContent = `Released ${films[i].release_date}`
+  movieCaption.textContent = `Released on ${films[i].release_date}`
   // Fourth, append the newly created img element as a child of the main element to make it appear in the DOM
   figure.appendChild(figImage)
   figure.appendChild(figCaption)
