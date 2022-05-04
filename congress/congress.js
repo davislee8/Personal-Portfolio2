@@ -35,13 +35,16 @@ function populateSenatorDiv(senatorArray) {
     const senFigure = document.createElement("figure");
     const figImg = document.createElement("img");
     const figCaption = document.createElement("figcaption");
+    const partyAffiliation = document.createElement("h4")
 
     figImg.src = senator.imgURL;
     figCaption.textContent = senator.name;
+    partyAffiliation.textContent = senator.party;
 
     senFigure.appendChild(figImg);
     senFigure.appendChild(figCaption);
     senatorDiv.appendChild(senFigure);
+    senFigure.appendChild(partyAffiliation);
   });
 }
 

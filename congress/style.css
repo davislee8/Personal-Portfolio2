@@ -64,6 +64,11 @@ figcaption {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+h4 {
+    font-size: 3rem;
+    color: rgb(128, 73, 73);
+}
+
 /* .seniority, li {
     text-align: center;
     padding: .3rem;
