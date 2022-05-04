@@ -4,7 +4,7 @@ header {
   text-align: center;
   color: aliceblue;
   background-image: url(../images/star.jpg);
-  background-size: .3vw;
+  /* background-size: 5vw; */
 }
 
 .mainContainer {
@@ -17,10 +17,8 @@ header {
   display: flex;
   justify-content: center;
   height: 100vh;
-}
-
-.shipViewer img {
-  padding: 5rem;
+  padding-top: 6rem;
+  padding-left: 3rem;
 }
 
 .box {
@@ -64,5 +62,7 @@ a {
 
 img {
   border-style: solid;
-  border-width: 3rem;
+  border-color: bisque;
+  border-width: 1rem;
+  height: 40rem;
 }
